@@ -32,7 +32,7 @@ public class ScoreManger {
         System.out.println("错误,未找到学生 "+name);
     }
 
-    public void updateSocre(String name,int newScore){
+    public void updateScore(String name,int newScore){
         for (Student s:students){
             if(s.getName().equals(name)){
                 s.setScore(newScore);
@@ -63,6 +63,17 @@ public class ScoreManger {
             total+=s.getScore();
         }
         return total/students.size();
+    }
+
+    public void showAllStudents(){
+        if(students.isEmpty()){
+            System.out.println("当前没有学生信息");
+            return;
+        }
+        System.out.println("所有学生信息：");
+        for (Student s : students){
+            System.out.println(s);
+        }
     }
 
 
